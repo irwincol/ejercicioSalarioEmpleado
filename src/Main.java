@@ -56,12 +56,16 @@ public class Main {
             if(salarioBruto > (valorSalarioMinimo*2)){
                 bonificacionEmpleado = 0;
                 auxilioTransporte = 0;
+
             } else {
                 bonificacionEmpleado = salarioBruto*0.1;
                 auxilioTransporte = 200000;
             }
-            salarioNeto = salarioBruto + bonificacionEmpleado + auxilioTransporte;
-            System.out.println("El salario neto es: " + salarioNeto);
+            retencionSalud = salarioBruto * 0.04;
+            retencionSalud = salarioBruto * 0.04;
+            salarioNeto = salarioBruto - retencionPension - retencionSalud + bonificacionEmpleado + auxilioTransporte;
+            System.out.println("Detalle de nomina empleado");
+            System.out.println("el empleado " + nombreEmpleado + "con documento " + documentoIdentidad + "tiene el siguiente detalle: \nSalario Bruto:  " + salarioBruto + "\nSalario Neto: " + salarioNeto + "\nDeduccion por Salud: " + retencionSalud + "\nDeduccion por pension: " + retencionPension + "\nAuxilio Transporte: " + auxilioTransporte + "\nBonificación: " + bonificacionEmpleado );
         } else {
             System.out.println("Error de credenciales");
         }
